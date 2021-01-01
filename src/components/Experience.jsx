@@ -5,8 +5,8 @@ export default class Experience extends Component {
   render() {
     return (
       <div className="container">
-        <br />
-        <br />
+        {/* <br /> */}
+        {/* <br /> */}
         <div className="container">
           <p className="designation">Python Developer</p>
           <span className="organization">George Mason University</span>

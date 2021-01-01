@@ -13,34 +13,46 @@ import Projects from './components/Projects'
 export default class App extends Component {
   render() {
     return (
-      <React.Fragment>
-        <NavBar />
-        <Router>
-          <Suspense fallback={<div>Loading...</div>} >
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route exact path="/#experience" >
-                <Experience />
-              </Route>
-              <Route exact path="/#projects" >
-                <Projects />
-              </Route>
-              <Route exact path="/#random" >
-                <Random />
-              </Route>
-            </Switch>
-          </Suspense>
-        </Router>
-      </React.Fragment>
-
       // <React.Fragment>
-      //   <Home />
-      //   <Experience />
-      //   <Projects />
-      //   <Random />
+      //   <NavBar />
+      //   <Router>
+      //     <Suspense fallback={<div>Loading...</div>} >
+      //       <Switch>
+      //         <Route exact path="/">
+      //           <Home />
+      //         </Route>
+      //         <Route exact path="/#experience" >
+      //           <Experience />
+      //         </Route>
+      //         <Route exact path="/#projects" >
+      //           <Projects />
+      //         </Route>
+      //         <Route exact path="/#random" >
+      //           <Random />
+      //         </Route>
+      //       </Switch>
+      //     </Suspense>
+      //   </Router>
       // </React.Fragment>
+
+      <React.Fragment>
+
+        <Home />
+        <br />
+        <br />
+        <h1 className="container">Experience</h1>
+        <Experience />
+        <br />
+        <br />
+        <h1 className="container">Projects</h1>
+        <Projects />
+        <br />
+        <br />
+        <h1 className="container">Random</h1>
+        <Random />
+        <br />
+        <br />
+      </React.Fragment>
     )
   }
 }

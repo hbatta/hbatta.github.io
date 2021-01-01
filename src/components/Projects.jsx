@@ -4,8 +4,8 @@ export default class Projects extends Component {
   render() {
     return (
       <div className="container">
-        <br />
-        <br />
+        {/* <br /> */}
+        {/* <br /> */}
         <div>
           <p className="project">Morphological NMT</p>
           <ul>

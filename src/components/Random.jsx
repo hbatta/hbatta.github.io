@@ -4,8 +4,8 @@ export default class Random extends Component {
   render() {
     return (
       <div className="container">
-        <br />
-        <br />
+        {/* <br /> */}
+        {/* <br /> */}
         <ul>
           <li>
             <h5><a href="https://humanparts.medium.com/aristotles-timeless-advice-on-what-real-friendship-is-and-why-it-matters-c0878418343f">
