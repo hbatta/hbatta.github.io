@@ -21,19 +21,26 @@ export default class App extends Component {
               <Route exact path="/">
                 <Home />
               </Route>
-              <Route exact path="/experience" >
+              <Route exact path="/#experience" >
                 <Experience />
               </Route>
-              <Route exact path="/projects" >
+              <Route exact path="/#projects" >
                 <Projects />
               </Route>
-              <Route exact path="/random" >
+              <Route exact path="/#random" >
                 <Random />
               </Route>
             </Switch>
           </Suspense>
         </Router>
       </React.Fragment>
+
+      // <React.Fragment>
+      //   <Home />
+      //   <Experience />
+      //   <Projects />
+      //   <Random />
+      // </React.Fragment>
     )
   }
 }
