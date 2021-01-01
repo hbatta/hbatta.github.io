@@ -1,11 +1,10 @@
 import React, { Component } from "react";
 
-export default class Random extends Component {
+export default class Tidbits extends Component {
   render() {
     return (
       <div className="container">
-        {/* <br /> */}
-        {/* <br /> */}
+        <h1>Tidbits</h1>
         <ul>
           <li>
             <h5><a href="https://humanparts.medium.com/aristotles-timeless-advice-on-what-real-friendship-is-and-why-it-matters-c0878418343f">

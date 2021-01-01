@@ -4,9 +4,8 @@ export default class Projects extends Component {
   render() {
     return (
       <div className="container">
-        {/* <br /> */}
-        {/* <br /> */}
-        <div>
+        <h1>Projects</h1>
+        <div className="container">
           <p className="project">Morphological NMT</p>
           <ul>
             <li>
@@ -21,7 +20,7 @@ export default class Projects extends Component {
           </ul>
         </div>
         <hr />
-        <div>
+        <div className="container">
           <p className="project">OneSocialNetwork</p>
           <ul>
             <li>
@@ -33,7 +32,7 @@ export default class Projects extends Component {
           </ul>
         </div>
         <hr />
-        <div>
+        <div className="container">
           <p className="project">Toxic Comment Classification</p>
           <ul>
             <li>
@@ -45,7 +44,7 @@ export default class Projects extends Component {
           </ul>
         </div>
         <hr />
-        <div>
+        <div className="container">
           <p className="project"> College Placement Cell Website</p>
           <ul>
             <li>
@@ -56,7 +55,7 @@ export default class Projects extends Component {
           </ul>
         </div>
         <hr />
-        <div>
+        <div className="container">
           <p className="project">College Examination Branch Website</p>
           <ul>
             <li>
@@ -68,7 +67,7 @@ export default class Projects extends Component {
           </ul>
         </div>
         <hr />
-        <div>
+        <div className="container">
           <p className="project">MRND Projects</p>
           <ul>
             <li>
