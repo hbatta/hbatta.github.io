@@ -6,11 +6,15 @@ export default class Projects extends Component {
       <div className="container">
         <h1>Projects</h1>
         <div className="container">
-          <p className="project">Morphological NMT</p>
+          <p className="project">
+            <a href="https://github.com/hbatta/morphological-nmt">
+              Morphological NMT
+            </a>
+          </p>
           <ul>
             <li>
-              Built a Hindi to English neural machine trans- lation model using
-              morphological rich infor- mation of the source language that
+              Built a Hindi to English neural machine translation model using
+              morphological rich information of the source language that
               produces results comparable to that of the state of the art model.
             </li>
             <li>
@@ -21,11 +25,11 @@ export default class Projects extends Component {
         </div>
         <hr />
         <div className="container">
-          <p className="project">OneSocialNetwork</p>
+          <p className="project">One Social Network</p>
           <ul>
             <li>
-              Developing a novel containerized web- application that shows
-              consolidated User homepages of social-networks like Twitter,
+              Developing a novel containerized web application that shows
+              consolidated user homepages of social-networks like Twitter,
               Reddit, LinkedIn, Facebook and Instagram at one source.
             </li>
             <li>Technologies: Python, Flask, React.js.</li>
@@ -38,32 +42,9 @@ export default class Projects extends Component {
             <li>
               Built a model that allows users to filter or customize the type of
               toxicity they are looking for while also offering better results
-              than Perspec- tive API.
+              than Perspective API.
             </li>
-            <li>Technologies: Python, Flask, React.js, Sklearn, PySpark.</li>
-          </ul>
-        </div>
-        <hr />
-        <div className="container">
-          <p className="project"> College Placement Cell Website</p>
-          <ul>
-            <li>
-              Developed a website for our college placement cell and the
-              activities taken up by that branch.
-            </li>
-            <li>Technologies: Django, Django Rest Frame- work, MySQL.</li>
-          </ul>
-        </div>
-        <hr />
-        <div className="container">
-          <p className="project">College Examination Branch Website</p>
-          <ul>
-            <li>
-              Built a fully-functioning end-to-end website for the daily-use of
-              our college examination branch. Scaled the application to handle
-              the data of thousands of students with no perfor- mance drops.
-            </li>
-            <li>Technologies: PHP, MySQL, HTML, CSS, Boot- strap 4.</li>
+            <li>Technologies: Python, Flask, React.js, Sklearn.</li>
           </ul>
         </div>
         <hr />

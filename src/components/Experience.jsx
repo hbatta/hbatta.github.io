@@ -8,12 +8,16 @@ export default class Experience extends Component {
         <h1>Experience</h1>
         <div className="container">
           <p className="designation">Python Developer</p>
-          <span className="organization">George Mason University</span>
+          <a href="https://www2.gmu.edu/" className="organization">
+            George Mason University
+          </a>
           <p className="date">Aug ’20 – Present | Fairfax VA</p>
           <ul>
             <li>
-              Working on the Heliophysics Application Programmer’s Interface
-              (HAPI).
+              <span> Working on the </span>
+              <a href="https://github.com/hapi-server">
+                Heliophysics Application Programmer’s Interface (HAPI).
+              </a>
             </li>
             <li>
               Developing a software to efficiently download a large amount of
@@ -24,7 +28,9 @@ export default class Experience extends Component {
         <hr />
         <div className="container">
           <p className="designation"> Web Developer </p>
-          <p className="organization">NeuroMorpho.Org</p>
+          <a href="http://neuromorpho.org/" className="organization">
+            NeuroMorpho.Org
+          </a>
           <p className="date">Oct ’19 – Aug ’20 | Fairfax VA </p>
           <ul>
             <li>
@@ -43,7 +49,9 @@ export default class Experience extends Component {
         <hr />
         <div className="container">
           <p className="designation"> Software Engineer Intern </p>
-          <p className="organization">Kore.ai</p>
+          <a href="https://kore.ai/" className="organization">
+            Kore.ai
+          </a>
           <p className="date">Nov ’18 – May ’19 | Hyderabad India</p>
           <ul>
             <li>
@@ -55,6 +63,26 @@ export default class Experience extends Component {
               Technologies: python, sklearn, pandas, numpy, node.js, flask,
               react.js, mongodb.
             </li>
+          </ul>
+        </div>
+        <hr />
+        <div className="container">
+          <p className="designation"> Web Developer </p>
+          <a href="https://anurag.edu.in/" className="organization">
+            Anurag Group of Institutions
+          </a>
+          <p className="date">Jul '18 -- Jul '19 | Hyderabad India</p>
+          <ul>
+            <li>
+              Developed a website for our college placement cell and the
+              activities taken up by that branch.
+            </li>
+            <li>
+              Built a fully-functioning end-to-end website for the daily-use of
+              our college examination branch. Scaled the application to handle
+              the data of thousands of students with no performance drops.
+            </li>
+            <li>Technologies: Django, Django Rest Framework, MySQL.</li>
           </ul>
         </div>
         <hr />
