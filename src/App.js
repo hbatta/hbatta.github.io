@@ -13,33 +13,32 @@ import Projects from "./components/Projects";
 export default class App extends Component {
   render() {
     return (
-      <div>
+      <React.Fragment>
         <NavBar />
-        <Router>
-          <Suspense fallback={<div>Loading...</div>}>
-            <Switch>
-              <Route exact path="/">
-                <Home />
-              </Route>
-              <Route path="/experience">
-                <br />
-                <br />
-                <Experience />
-              </Route>
-              <Route path="/projects">
-                <br />
-                <br />
-                <Projects />
-              </Route>
-              <Route path="/tidbits">
-                <br />
-                <br />
-                <Tidbits />
-              </Route>
-            </Switch>
-          </Suspense>
-        </Router>
-      </div>
+        <main>
+          <Router>
+            <Suspense fallback={<div>Loading...</div>}>
+              <Switch>
+                <Route exact path="/">
+                  <Home />
+                </Route>
+                <Route path="/experience">
+                  <br />
+                  <Experience />
+                </Route>
+                <Route path="/projects">
+                  <br />
+                  <Projects />
+                </Route>
+                <Route path="/tidbits">
+                  <br />
+                  <Tidbits />
+                </Route>
+              </Switch>
+            </Suspense>
+          </Router>
+        </main>
+      </React.Fragment>
     );
   }
 }

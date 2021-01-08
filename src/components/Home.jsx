@@ -21,12 +21,12 @@ export default class Home extends Component {
                 </center>
               </td>
               <td style={{ padding: "30px", textAlign: "center" }}>
-                <h2>Hi! I'm Hari Narayana Batta.</h2>
+                <h3>Hi! I'm Hari Narayana Batta.</h3>
                 <hr />
-                <h4>
+                <h5>
                   Master of Science in Computer Science student at George Mason
                   University.
-                </h4>
+                </h5>
                 <hr />
                 <p style={{ textAlign: "center" }}>
                   <a href="https://github.com/hbatta/">GitHub</a>

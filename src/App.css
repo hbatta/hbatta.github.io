@@ -10,6 +10,12 @@
   margin-bottom: 0px;
 }
 
+main {
+  margin: 0 auto;
+  max-width: 900px;
+  width: 80%;
+}
+
 .date{
   color: #808080;
   font-size: 14px;
@@ -23,10 +29,6 @@
   font-weight: bold;
 }
 
-/* @media only screen and (max-device-width: 480px) {
-
-} */
-
 
 .display-picture {
 
@@ -37,6 +39,12 @@
 
 
 @media  only screen and  (max-width: 1000px) {
+  main {
+    margin: none;
+    max-width: none;
+    width: 100%;
+  }
+
   td {
     display: block;
   }
@@ -45,5 +53,5 @@
     border-right: none;
     padding: none;
     border-radius: none;
-}
+  }
 }
