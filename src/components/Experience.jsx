@@ -11,18 +11,20 @@ export default class Experience extends Component {
           <a href="https://www2.gmu.edu/" className="organization">
             George Mason University
           </a>
-          <p className="date">Aug ’20 – Present | Fairfax VA</p>
+          <p className="date">Aug ’20 – Dec '20' | Fairfax VA</p>
           <ul>
             <li>
-              <span> Working on the </span>
+              <span> Contributed to the </span>
               <a href="https://github.com/hapi-server">
                 Heliophysics Application Programmer’s Interface (HAPI).
               </a>
+              <span>
+                {" "}
+                (open-source, python) by building their parallelization &
+                caching pipelines which significantly reduced the download time.
+              </span>
             </li>
-            <li>
-              Developing a software to efficiently download a large amount of
-              data from the HAPI servers.
-            </li>
+            <li>Technologies: Python 3, Joblib, pytest, Travis CI</li>
           </ul>
         </div>
         <hr />
@@ -34,34 +36,39 @@ export default class Experience extends Component {
           <p className="date">Oct ’19 – Aug ’20 | Fairfax VA </p>
           <ul>
             <li>
-              Worked on building the next version of neuromorpho website using
-              Django and React.js.
+              Played a pivotal role in developing the next version of
+              NeuroMorpho.org and significantly reduced the query-and-fetch time
+              from their neuron reconstruction database, the world's largest
+              collection of neuron-data.
             </li>
             <li>
-              Built a micro service architecture along with the CI-CD pipeline.
-            </li>
-            <li>
-              Technologies: Python, Django, JavaScript, React.js, Docker,
-              Docker-Compose, Django-rest-framework.
+              Technologies: Django, Django REST framework, CI/CD, Docker, MySQL,
+              ElasticSearch, React, Redux, Highcharts
             </li>
           </ul>
         </div>
         <hr />
         <div className="container">
-          <p className="designation"> Software Engineer Intern </p>
+          <p className="designation">Software Engineer Intern,</p>
           <a href="https://kore.ai/" className="organization">
-            Kore.ai
+            Machine Learning R{"&"}D Team, Kore.ai
           </a>
           <p className="date">Nov ’18 – May ’19 | Hyderabad India</p>
           <ul>
             <li>
               Developed an end-to-end pipeline to generate dialogue flows from
-              chat transcripts using several state of the art models and
-              clustering sparse high-dimensional data.
+              chat transcripts using several SOTA (including novel,
+              custom-built) models and clustering sparse high-dimensional data.
             </li>
             <li>
-              Technologies: python, sklearn, pandas, numpy, node.js, flask,
-              react.js, mongodb.
+              Performed Named Entity Recognition, sentiment analysis, semantic
+              analysis, and synthetic-text-generation using SOTA models while
+              working with GloVe, fastText, Word2vec, ELMo, RNN, GRUs, LSTM,
+              BiLSTM, and Transformers.
+            </li>
+            <li>
+              Technologies: Python, PyTorch, TensorFlow, NumPy, Stanford
+              CoreNLP, MySQL, Flask, spaCy, NLTK, scikit-learn, matplotlib
             </li>
           </ul>
         </div>
@@ -71,18 +78,14 @@ export default class Experience extends Component {
           <a href="https://anurag.edu.in/" className="organization">
             Anurag Group of Institutions
           </a>
-          <p className="date">Jul '18 -- Jul '19 | Hyderabad India</p>
+          <p className="date">Jul '18 – Jul '19 | Hyderabad India</p>
           <ul>
             <li>
-              Developed a website for our college placement cell and the
-              activities taken up by that branch.
+              Team-Lead in developing end-to-end college examination branch and
+              placement-cell websites scaled to handle data of thousands of
+              students with no performance drops.
             </li>
-            <li>
-              Built a fully-functioning end-to-end website for the daily-use of
-              our college examination branch. Scaled the application to handle
-              the data of thousands of students with no performance drops.
-            </li>
-            <li>Technologies: Django, Django Rest Framework, MySQL.</li>
+            <li>Django, Pandas, MySQL, HTML, JavaScript, CSS</li>
           </ul>
         </div>
         <hr />
