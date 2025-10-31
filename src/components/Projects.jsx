@@ -7,7 +7,7 @@ export default class Projects extends Component {
         <h1>Projects</h1>
         <div className="container">
           <p className="project">
-            <a href="https://github.com/hbatta/morphological-nmt">
+            <a href="https://github.com/hbatta/morphological-nmt" target="_blank" rel="noopener noreferrer">
               Morphological NMT
             </a>
           </p>
