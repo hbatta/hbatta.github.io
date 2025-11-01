@@ -1,9 +1,34 @@
+/* Dark mode overrides */
+body, html, #root {
+  background-color: #1a1a1a !important;
+  color: #e0e0e0 !important;
+}
+
+.container, main {
+  background-color: transparent !important;
+}
+
+h1, h2, h3, h4, h5, h6, p, div, span {
+  color: #e0e0e0 !important;
+}
+
+p, li {
+  text-align: justify;
+}
+
+hr {
+  border-color: #444 !important;
+  opacity: 1 !important;
+}
+
 a {
   text-decoration: none;
+  color: #6fb3ff;
 }
 
 a:hover {
   text-decoration: underline;
+  color: #9fcdff;
 }
 
 .designation {
@@ -25,7 +50,7 @@ main {
 }
 
 .date{
-  color: #808080;
+  color: #a0a0a0;
   font-size: 14px;
   font-style: italic;
   margin-bottom: 0px;
@@ -39,7 +64,7 @@ main {
 
 
 .display-picture {
-    border-right: 2px solid black;
+    border-right: 2px solid #e0e0e0;
     padding: 50px;
     border-radius: 2005px;
 }
@@ -56,7 +81,7 @@ main {
 .home-image {
   text-align: center;
   padding: 50px;
-  border-right: 2px solid black;
+  border-right: 2px solid #e0e0e0;
 }
 
 .home-content {
