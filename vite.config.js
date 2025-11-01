@@ -13,6 +13,14 @@ export default defineConfig({
     outDir: 'build',
     sourcemap: false
   },
+  define: {
+    'global': 'globalThis',
+  },
+  resolve: {
+    alias: {
+      buffer: 'buffer',
+    }
+  },
   esbuild: {
     loader: 'jsx',
     include: /src\/.*\.jsx?$/,
@@ -22,6 +30,9 @@ export default defineConfig({
     esbuildOptions: {
       loader: {
         '.js': 'jsx',
+      },
+      define: {
+        global: 'globalThis'
       },
     }
   }

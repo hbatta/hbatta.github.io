@@ -4,7 +4,7 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-Personal portfolio website built with Create React App and deployed to GitHub Pages. The site showcases experience, projects, and personal tidbits.
+Modern personal portfolio website featuring a single-page scroll design, markdown-based blog, and smooth animations. Built with React + Vite and deployed to GitHub Pages.
 
 ## Development Commands
 
@@ -15,11 +15,11 @@ npm install
 # Start development server (opens on http://localhost:3000)
 npm start
 
-# Run tests
-npm test
-
 # Build for production
 npm run build
+
+# Preview production build
+npm run preview
 
 # Deploy to GitHub Pages (builds and pushes to gh-pages branch)
 npm run deploy
@@ -28,24 +28,60 @@ npm run deploy
 ## Architecture
 
 ### Technology Stack
-- **React 17** with class and functional components
+- **React 18.3.1** with functional components and hooks
+- **Vite 7.1.12** for fast builds and HMR (migrated from Create React App)
 - **React Router v5** using HashRouter (required for GitHub Pages)
-- **Bootstrap 4** for styling with react-bootstrap components
-- **Create React App** tooling (webpack, babel, eslint)
+- **Bootstrap 5.3.3** for responsive grid and utilities
+- **Markdown Processing** (gray-matter, react-markdown, remark-gfm)
 
 ### Routing Structure
-Uses HashRouter instead of BrowserRouter for GitHub Pages compatibility. Routes are accessed via hash fragments (e.g., `/#/experience`).
+Uses HashRouter instead of BrowserRouter for GitHub Pages compatibility. Routes are accessed via hash fragments (e.g., `/#/blog`).
 
 **Main Routes:**
-- `/` - Home page
-- `/experience` - Work experience
-- `/projects` - Project portfolio
-- `/tidbits` - Personal tidbits/blog
+- `/` - Single-page scroll layout (Home, Experience, Education sections)
+- `/blog` - Blog post listing
+- `/blog/:slug` - Individual blog post
 
 ### Component Architecture
-- **App.js**: Main component that sets up Router and renders NavBar + route-based page components
-- **NavBar.jsx**: Persistent navigation bar with responsive collapse functionality
-- **Page Components** (in `src/components/`): Home, Experience, Projects, Tidbits - each represents a full page view
+
+**Core Layout:**
+- **App.js**: Root component with Router, Suspense, and route definitions
+- **ScrollPortfolio.jsx**: Main single-page scroll component with all sections
+- **ScrollIndicator.jsx**: Floating dot navigation for sections
+- **ScrollProgress.jsx**: Top scroll progress bar
+
+**Blog System:**
+- **BlogList.jsx**: Grid of blog post cards with previews
+- **BlogPost.jsx**: Individual post with markdown rendering
+- **blogPosts.js** (utils): Loads and parses markdown files with frontmatter
+
+**Navigation:**
+- No traditional navbar - uses floating elements instead
+- Scroll dots on right side for section navigation
+- Floating blog button in bottom-right corner
+- Back-to-home link on blog pages
+
+### Design System
+
+**Dark Theme:**
+- Background: `#1a1a1a`
+- Text: `#e0e0e0`
+- Accent blue: `#6fb3ff`
+- Links hover: `#9fcdff`
+
+**Animations:**
+- Fade-in on scroll for sections and cards
+- Floating animation for profile image
+- Hover effects with transform and glow
+- Smooth scroll behavior
+- Respects `prefers-reduced-motion` for accessibility
+
+**Layout:**
+- Single-page scroll with full-height hero section
+- Centered vertical layout for home section (image + content)
+- Card-based design for Experience and Education
+- Left accent bar on cards with gradient
+- Mobile-responsive with flexbox
 
 ### Git Branch Structure
 - **master**: Source code (work here for development)
@@ -55,14 +91,138 @@ Always work on the master branch. The deploy script handles building and pushing
 
 ## Key Implementation Details
 
+### Why Vite Instead of CRA?
+Migrated from Create React App to Vite for:
+- 10x+ faster builds (440ms vs 30+ seconds)
+- Lightning-fast HMR
+- Smaller dependency footprint (~290 packages vs 1,600+)
+- Modern tooling with better defaults
+- No deprecation warnings
+
 ### Why HashRouter?
 GitHub Pages serves static files and doesn't support server-side routing. HashRouter uses URL fragments (`#/path`) which work with static hosting since everything after `#` is client-side only.
+
+### Blog System
+Markdown files in `src/posts/` with YAML frontmatter:
+```markdown
+---
+title: "Post Title"
+date: "2025-01-01"
+description: "Brief description"
+slug: "url-slug"
+---
+
+# Content here...
+```
+
+Files are imported statically in `blogPosts.js` using Vite's `?raw` import. The `gray-matter` library parses frontmatter, and `react-markdown` with `remark-gfm` renders the content with GitHub Flavored Markdown support.
+
+**Buffer Polyfill:** gray-matter requires Node.js Buffer API. We polyfill it in the browser by:
+1. Installing `buffer` package
+2. Importing and assigning to `window.Buffer` in blogPosts.js
+3. Configuring Vite to provide `global` as `globalThis`
+
+### Floating Navigation System
+Instead of a persistent navbar, the site uses:
+1. **Scroll Dots** - Fixed on right side, track active section using Intersection Observer
+2. **Floating Blog Button** - Pill-shaped button with icon in bottom-right
+3. **Scroll Progress Bar** - Thin gradient bar at top showing scroll position
+
+This creates an uninterrupted flow and modern aesthetic.
+
+### Scroll Animations
+Uses CSS animations with staggered delays:
+- Sections fade in on load with `fadeInUp` keyframe
+- Experience/Education cards animate in sequence (0.1s delay between each)
+- Profile image floats with 3-second cycle
+- All animations disabled for users with `prefers-reduced-motion`
 
 ### Deployment Process
 The `npm run deploy` command:
 1. Runs `npm run build` (via predeploy script)
-2. Pushes the `build/` directory contents to the gh-pages branch
-3. GitHub Pages serves from the gh-pages branch
+2. Vite builds optimized production bundle to `build/` folder
+3. `gh-pages` package pushes `build/` contents to gh-pages branch
+4. GitHub Pages automatically serves from gh-pages branch
 
-### Bootstrap Integration
-Bootstrap CSS is imported globally in App.js. Components use Bootstrap classes directly rather than styled-components or CSS modules.
+## File Structure
+
+```
+src/
+├── components/
+│   ├── ScrollPortfolio.jsx    # Main single-page layout
+│   ├── ScrollIndicator.jsx    # Floating navigation dots
+│   ├── ScrollProgress.jsx     # Top progress bar
+│   ├── BlogList.jsx           # Blog listing page
+│   ├── BlogPost.jsx           # Individual post page
+│   └── Resume.jsx             # Resume page (kept for print)
+├── posts/                     # Markdown blog posts
+│   ├── welcome-to-my-blog.md
+│   ├── migrating-to-vite.md
+│   └── coffee-and-code.md
+├── utils/
+│   └── blogPosts.js           # Blog post loader & parser
+├── images/
+│   └── displayPicture.jpg     # Profile photo
+├── App.js                     # Root component & routing
+├── App.css                    # Global styles, dark theme, animations
+├── index.js                   # Entry point
+└── index.css                  # Base styles
+```
+
+## Adding New Blog Posts
+
+1. Create `.md` file in `src/posts/` with frontmatter
+2. Import in `src/utils/blogPosts.js`:
+   ```js
+   import newPost from '../posts/new-post.md?raw';
+   ```
+3. Add to `postFiles` object:
+   ```js
+   const postFiles = {
+     'new-post': newPost,
+     // ...existing posts
+   };
+   ```
+4. Posts auto-sort by date (newest first)
+
+## Styling Guidelines
+
+**CSS Architecture:**
+- Global styles in `App.css`
+- Component-specific styles in component files (Resume.css)
+- Bootstrap utilities for layout
+- Custom CSS for dark theme and animations
+
+**Color Palette:**
+- Primary background: `#1a1a1a`
+- Text: `#e0e0e0`
+- Secondary text: `#a0a0a0`, `#b8b8b8`
+- Accent: `#6fb3ff` (blue)
+- Borders: `#444`
+- Card background: `rgba(111, 179, 255, 0.05)`
+
+**Responsive Breakpoints:**
+- Mobile: `max-width: 768px`
+- Content max-width: `900px` (80% on desktop, 95% on mobile)
+
+## Performance Notes
+
+- **Fast builds**: Vite HMR updates in <100ms
+- **Small bundle**: Optimized with code splitting
+- **Lazy loading**: Routes loaded on demand via React.Suspense
+- **Animations**: CSS-based for hardware acceleration
+- **Images**: Sized appropriately (280px on desktop, 220px mobile)
+
+## Common Tasks
+
+### Update Profile Photo
+Replace `src/images/displayPicture.jpg` with new image (square aspect ratio recommended).
+
+### Modify Content
+Edit `src/components/ScrollPortfolio.jsx` to update Experience, Education, or home section content.
+
+### Change Theme Colors
+Update color variables in `App.css` (search for hex values like `#6fb3ff`).
+
+### Add Resume PDF
+Place `resume.pdf` in `public/` folder. Link in home section already configured.

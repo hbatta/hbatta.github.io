@@ -5,47 +5,31 @@ import { HashRouter as Router, Switch, Route } from "react-router-dom";
 import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 
-import NavBar from "./components/NavBar";
-import Home from "./components/Home";
-// import Tidbits from "./components/Tidbits";
-import Experience from "./components/Experience";
-import Education from "./components/Education";
-import Resume from "./components/Resume";
-// import Projects from "./components/Projects";
+import ScrollPortfolio from "./components/ScrollPortfolio";
+import BlogList from "./components/BlogList";
+import BlogPost from "./components/BlogPost";
+import ScrollIndicator from "./components/ScrollIndicator";
+import ScrollProgress from "./components/ScrollProgress";
 
 export default class App extends Component {
   render() {
     return (
       <Router>
         <React.Fragment>
-          <NavBar />
           <main>
             <Suspense fallback={<div>Loading...</div>}>
               <Switch>
                 <Route exact path="/">
-                  <Home />
+                  <ScrollProgress />
+                  <ScrollIndicator />
+                  <ScrollPortfolio />
                 </Route>
-                <Route path="/experience">
-                  <br />
-                  <Experience />
+                <Route exact path="/blog">
+                  <BlogList />
                 </Route>
-                <Route path="/education">
-                  <br />
-                  <Education />
+                <Route path="/blog/:slug">
+                  <BlogPost />
                 </Route>
-                <Route path="/resume">
-                  <Resume />
-                </Route>
-                {/* Archived for now - can be restored later
-                <Route path="/projects">
-                  <br />
-                  <Projects />
-                </Route>
-                <Route path="/tidbits">
-                  <br />
-                  <Tidbits />
-                </Route>
-                */}
               </Switch>
             </Suspense>
           </main>
