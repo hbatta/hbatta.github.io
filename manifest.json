@@ -1,6 +1,7 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "HNB Portfolio",
+  "name": "Hari Narayana Batta - Software Engineer Portfolio",
+  "description": "Portfolio of Hari Narayana Batta, Software Development Engineer II at AWS. Showcasing experience in distributed systems, cloud architecture, and full-stack development.",
   "icons": [
     {
       "src": "favicon.ico",
@@ -20,6 +21,6 @@
   ],
   "start_url": ".",
   "display": "standalone",
-  "theme_color": "#000000",
-  "background_color": "#ffffff"
+  "theme_color": "#1a1a1a",
+  "background_color": "#1a1a1a"
 }
